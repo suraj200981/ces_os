@@ -14,17 +14,6 @@
 
         <v-spacer></v-spacer>
       </v-app-bar>
-
-      <v-navigation-drawer
-        v-model="drawer"
-        bottom
-        temporary
-      >
-        <v-list
-          :items="items"
-        ></v-list>
-      </v-navigation-drawer>
-
     </v-layout>
   </v-card>
   <nav>
@@ -32,7 +21,8 @@
     <br>
     <br>
     <router-link to="/">Home</router-link> |
-    <router-link to="/result">Result</router-link>
+    <router-link to="/result">Result</router-link> |
+    <router-link to="/booking">Booking</router-link>
   </nav>
   <router-view/>
 </template>
