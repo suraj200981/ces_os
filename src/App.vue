@@ -58,4 +58,10 @@ nav a {
 nav a.router-link-exact-active {
   color: #42b983;
 }
+body{
+background-image: url("C:\Users\sursh\OneDrive - Netcompany\Documents\CES\frontend 4\ces_os\src\assets\pexels-brett-sayles-1493756.jpg");
+background-position-x:  20%;
+background-size: cover;
+}
+
 </style>
