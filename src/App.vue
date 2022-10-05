@@ -32,10 +32,10 @@ nav a.router-link-exact-active {
   color: #42b983;
 }
 body{
-background-image: url('assets/background.jpg');
-background-position-x:  20%;
-background-size: cover;
-height: 100%;
+  background-image: url('assets/background.jpg');
+  background-position-x:  20%;
+  background-size: cover;
+  height: 100%;
 }
 html{
   height:100%;
@@ -62,7 +62,7 @@ html{
 
 .base_content{
   width: 100%;
-  height: 60%;
+  height: 75%;
   background: rgba(255,255,255,0.75);
 
 }
@@ -72,5 +72,37 @@ html{
   color: white;
   font-size: 24px;
   padding: 2%;
+  height: 10%;
+}
+
+.base_controls_content{
+  height: 90%;
+  padding: 5%;
+}
+
+.base_controls_label{
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+}
+
+.base_controls_input{
+  background: white;
+  border: 3px solid #085394;
+  margin-bottom: 20px;
+  font-size: 18px;
+  width: 80%;
+}
+
+.base_controls_form{
+  width: 100%;
+}
+
+.base_controls_button{
+  background: #085394;
+  border: 3px solid black;
+  color: white !important;
+  font-size: 20px;
+  width: 80%;
 }
 </style>
