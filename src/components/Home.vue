@@ -9,41 +9,35 @@
           <div class="base_controls_header">
               Login
           </div>
-          <v-row>
-            <v-card-text style="text-align:left !important;"
-            >
-              <b>Email:</b>
-            </v-card-text>
+          <div class="base_controls_content d-flex flex-column justify-space-around align-center">
 
-            <v-text-field
-              v-model="message4"
-              label="Email address"
-              outlined
-              clearable
-            ></v-text-field>
+            <div class="base_controls_form">
+              <div class="base_controls_label">
+              E-mail:
+            </div>
 
-            <v-card-text 
-              style="text-align:left !important;"
-            >
-              <b>Password:</b>
-            </v-card-text>
+            <input 
+              class="base_controls_input"
+              >
 
-            <v-text-field
-              v-model="message4"
-              label="Password"
-              outlined
-              clearable
-            >
-            </v-text-field>
+              <div class="base_controls_label">
+              Password:
+            </div>
 
-            <v-btn
-              elevation="2"
-              large
-              style="background:#315473; color: white;"
+            <input 
+              class="base_controls_input"
+              type="password"
+              >
+            </div>
+            
+          
+            <button
+              type="button"
+              class="base_controls_button"
             >
               Login
-            </v-btn>
-          </v-row>
+            </button>
+          </div>
         </div>
       </v-col>
 
@@ -73,22 +67,27 @@ export default {
     width: 10px;
     padding-left:10px;
     padding-right:20px;
-}
+  }
  .heightTxt{
   width: 10px;
     padding-left:10px;
-    padding-right:20px;}
+    padding-right:20px;
+  }
  .depthTxt{
   width: 10px;
     padding-left:10px;
-    padding-right:20px;}
-    .bookingTitle{
-      background:#385F82;
-      color:white;
-      font-size: 25px;
-    }
+    padding-right:20px;
+  }
+  .bookingTitle{
+    background:#385F82;
+    color:white;
+    font-size: 25px;
+  }
+</style>
+
+<style>
   .home{
-  height: 100%;
+    height: 100%;
   }
 </style>
 
