@@ -1,82 +1,57 @@
 <template>
-  <v-container>
-    <v-row class="text-center">
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3" style="color:white;">
-          Welcome to Oceanic Airlines
-        </h1>
-      
+  <v-container class="base_container">
+    <v-row class="base_row">
+      <v-col 
+        cols="3"
+        class="d-flex align-center"
+      >
+        <div class="base_controls">
+          <div class="base_controls_header">
+              Login
+          </div>
+          <v-row>
+            <v-card-text style="text-align:left !important;"
+            >
+              <b>Email:</b>
+            </v-card-text>
+
+            <v-text-field
+              v-model="message4"
+              label="Email address"
+              outlined
+              clearable
+            ></v-text-field>
+
+            <v-card-text 
+              style="text-align:left !important;"
+            >
+              <b>Password:</b>
+            </v-card-text>
+
+            <v-text-field
+              v-model="message4"
+              label="Password"
+              outlined
+              clearable
+            >
+            </v-text-field>
+
+            <v-btn
+              elevation="2"
+              large
+              style="background:#315473; color: white;"
+            >
+              Login
+            </v-btn>
+          </v-row>
+        </div>
       </v-col>
 
       <v-col
-        class="mb-5"
-        cols="12"
+        cols="9"
+        class="d-flex align-center"
       >
-       
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-      <v-row no-gutters>
-      <v-col>
-        <v-card
-          class="pa-2"
-          outlined
-          elevation="2"
-          tile
-          style="background-color: rgba(255, 255, 255, .6);"
-          width="350px"
-        >
-          <h3 class="bookingTitle">Login</h3>
-          <v-card-text style="text-align:left !important;"><b>Email:</b></v-card-text>
-          <v-text-field
-            v-model="message4"
-            label="Email address"
-            outlined
-            clearable
-          ></v-text-field>
-      <v-card-text style="text-align:left !important;"><b>Password:</b></v-card-text>
-      <v-text-field
-            v-model="message4"
-            label="Password"
-            outlined
-            clearable
-          ></v-text-field>
-
-          <v-btn
-  elevation="2"
-  large
-  style="background:#315473; color: white;"
->login</v-btn>
-        </v-card>
-      </v-col>
-      <v-col order="12">
-        <v-card
-        class="cardColor"
-          outlined
-          tile
-        >
-          
-        </v-card>
-      </v-col>
-      <v-col order="1">
-        <v-card
-        class="cardColor"
-          outlined
-          tile
-        >
-          
-        </v-card>
-      </v-col>
-    </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
+      <div class="base_content"></div>
       </v-col>
     </v-row>
   </v-container>
@@ -94,16 +69,16 @@ export default {
 }
 </script>
 <style scoped>
-/deep/ .widthTxt{
+ .widthTxt{
     width: 10px;
     padding-left:10px;
     padding-right:20px;
 }
-/deep/ .heightTxt{
+ .heightTxt{
   width: 10px;
     padding-left:10px;
     padding-right:20px;}
-/deep/ .depthTxt{
+ .depthTxt{
   width: 10px;
     padding-left:10px;
     padding-right:20px;}
@@ -112,4 +87,9 @@ export default {
       color:white;
       font-size: 25px;
     }
+  .home{
+  height: 100%;
+  }
 </style>
+
+  
