@@ -53,5 +53,7 @@ background-image: url("C:\Users\sursh\OneDrive - Netcompany\Documents\CES\fronte
 background-position-x:  20%;
 background-size: cover;
 }
-
+html{
+  height:100%;
+}
 </style>

@@ -28,28 +28,59 @@
             outlined
             elevation="2"
             tile
+            style="    background-color: rgba(255, 255, 255, .6);"
+            width="350px"
           >
-            <h3>Login</h3>
-            <v-card-text>Email:</v-card-text>
+            <h3 class="bookingTitle">Booking</h3>
+            <v-card-text style="text-align:left !important;"><b>From:</b></v-card-text>
+            <v-select
+          :items="items"
+          label="Outlined style"
+          dense
+          outlined
+        ></v-select>
+        <v-card-text style="text-align:left !important;"><b>To:</b></v-card-text>
+            <v-select
+          :items="items"
+          label="Outlined style"
+          dense
+          outlined
+        ></v-select>
+        <v-card-text style="text-align:left !important;"><b>Weight:</b></v-card-text>
             <v-text-field
-              label="Email"
+              label="Weight"
               solo
             ></v-text-field>
-            <v-card-text>Password:</v-card-text>
-            <v-text-field
-              label="Password"
+            <v-card-text style="text-align:left !important;"><b>Size:</b></v-card-text>
+
+            <v-row>
+                <v-text-field
+                class="widthTxt"
+              label="Width"
               solo
             ></v-text-field>
+            <v-text-field
+                class="heightTxt"
+              label="Height"
+              solo
+            ></v-text-field>
+            <v-text-field
+                class="depthTxt"
+              label="Depth"
+              solo
+            ></v-text-field>
+            </v-row>
             <v-btn
     elevation="2"
     large
-  >Login</v-btn>
+    style="background:#315473; color: white;"
+  >Search</v-btn>
           </v-card>
         </v-col>
         <v-col order="12">
           <v-card
           class="cardColor"
-                    outlined
+            outlined
             tile
             
           >
@@ -84,8 +115,30 @@
     name: 'Booking',
   
     data: () => ({
+        column: null,
+        row: null,
      
     }),
   }
   </script>
+  <style scoped>
+  /deep/ .widthTxt{
+      width: 10px;
+      padding-left:10px;
+      padding-right:20px;
+}
+/deep/ .heightTxt{
+    width: 10px;
+      padding-left:10px;
+      padding-right:20px;}
+/deep/ .depthTxt{
+    width: 10px;
+      padding-left:10px;
+      padding-right:20px;}
+      .bookingTitle{
+        background:#385F82;
+        color:white;
+        font-size: 25px;
+      }
+  </style>
   
