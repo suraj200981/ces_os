@@ -1,136 +1,113 @@
 <template>
-    <v-container>
-      <v-row class="text-center">
-  
-  
-        <v-col class="mb-4">
-          <h1 class="display-2 font-weight-bold mb-3" style="color:white;">
-            Welcome to Oceanic Airlines
-          </h1>
-        
-        </v-col>
-  
-        <v-col
-          class="mb-5"
-          cols="12"
-        >
-         
-        </v-col>
-  
-        <v-col
-          class="mb-5"
-          cols="12"
-        >
-        <v-row no-gutters>
-        <v-col>
-          <v-card
-            class="pa-2"
-            outlined
-            elevation="2"
-            tile
-            style="    background-color: rgba(255, 255, 255, .6);"
-            width="350px"
-          >
-            <h3 class="bookingTitle">Booking</h3>
-            <v-card-text style="text-align:left !important;"><b>From:</b></v-card-text>
-            <v-select
-          :items="routes"
-          label="Starting location"
-          dense
-          outlined
-        ></v-select>
-        <v-card-text style="text-align:left !important;"><b>To:</b></v-card-text>
-            <v-select
-          :items="routes"
-          label="Final destination"
-          dense
-          outlined
-        ></v-select>
-        <v-card-text style="text-align:left !important;"><b>Weight (kg):</b></v-card-text>
-            <v-text-field
-              label="Weight"
-              solo
-            ></v-text-field>
-            <v-card-text style="text-align:left !important;"><b>Size category:</b></v-card-text>
-            <v-row>
-                <v-text-field
-                class="widthTxt"
-              label="Width"
-              solo
-            ></v-text-field>
-            <v-text-field
-                class="heightTxt"
-              label="Height"
-              solo
-            ></v-text-field>
-            <v-text-field
-                class="depthTxt"
-              label="Depth"
-              solo
-            ></v-text-field>
-            </v-row>
-            <v-btn
-    elevation="2"
-    large
-    style="background:#315473; color: white;"
-  >Search</v-btn>
-          </v-card>
-        </v-col>
-        <v-col order="12">
-          <v-card
-          class="cardColor"
-            outlined
-            tile
+  <v-container class="base_container">
+    <v-row class="base_row">
+      <v-col 
+        cols="3"
+        class="d-flex align-center"
+      >
+        <div class="base_controls">
+          <div class="base_controls_header">
+              Booking
+          </div>
+          <div class="base_controls_content d-flex flex-column justify-center align-center">
+
+            <div class="base_controls_form">
+              <div class="base_controls_label">
+                From:
+              </div>
+
+              <select class="base_controls_dropdown">
+                <option v-for="route in routes" :key="route">{{route}}</option>
+              </select>
+
+              <div class="base_controls_label">
+              To:
+            </div>
+
+            <select class="base_controls_dropdown">
+              <option v-for="route in routes" :key="route">{{route}}</option>
+            </select>
+
+            <div class="base_controls_label">
+              Weight (kg):
+            </div>
+
+            <input 
+              class="base_controls_input"
+              >
+
+            <div class="base_controls_label">
+              Size (cm):
+            </div>
+
+            <div class="size_inputs">
+              <div>
+                <div class="size_label">Width</div>
+                <input class="size_input">
+              </div>
+
+              <div>
+                <div class="size_label">Height</div>
+                <input class="size_input">
+              </div>
+
+              <div>
+                <div class="size_label">Depth</div>
+                <input class="size_input">
+              </div>
+            </div>
+
+            </div>
             
-          >
-            
-          </v-card>
-        </v-col>
-        <v-col order="1">
-          <v-card
-          class="cardColor"
-            outlined
-            tile
-          >
-            
-          </v-card>
-        </v-col>
-      </v-row>
-        </v-col>
-  
-        <v-col
-          class="mb-5"
-          cols="12"
-        >
-        </v-col>
-      </v-row>
-    </v-container>
-  </template>
+          
+            <button
+              type="button"
+              class="base_controls_button"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </v-col>
+
+      <v-col
+        cols="9"
+        class="d-flex align-center"
+      >
+      <div class="base_content">
+        <ResultComponent v-if="resultSelected == null" @resultClicked="resultSelected = $event"/>
+        <ResultDetailsComponent v-if="resultSelected != null" :optimum="resultSelected == 0"/>
+      </div>
+      </v-col>
+    </v-row>
+  </v-container>
+</template>
   
   <script>
-  
+  import ResultComponent from './ResultComponent.vue';
+  import ResultDetailsComponent from './ResultDetailsComponent.vue'
   export default {
     // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Booking',
-  
+    name: "Booking",
     data: () => ({
-        column: null,
+        resultSelected: null,
         row: null,
-        routes: ['Congo', 'Dakar', 'Kabalo'],
+        routes: ["Congo", "Dakar", "Kabalo"],
     }),
-  }
+    components: { ResultComponent, ResultDetailsComponent }
+}
   </script>
   <style scoped>
-  /deep/ .widthTxt{
+   .widthTxt{
       width: 10px;
       padding-left:10px;
       padding-right:20px;
 }
-/deep/ .heightTxt{
+ .heightTxt{
     width: 10px;
       padding-left:10px;
       padding-right:20px;}
-/deep/ .depthTxt{
+ .depthTxt{
     width: 10px;
       padding-left:10px;
       padding-right:20px;}
@@ -138,6 +115,30 @@
         background:#385F82;
         color:white;
         font-size: 25px;
+      }
+
+      .size_inputs{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+      }
+
+      .size_inputs > div{
+        width: 30%;
+      } 
+
+      .size_input{
+        width: 100%;
+        background: white;
+        border: 2px solid #085394;
+        padding: 2px;
+      }
+
+      .size_label{
+        text-align: left;
       }
   </style>
   

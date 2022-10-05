@@ -9,7 +9,7 @@
           <div class="base_controls_header">
               Login
           </div>
-          <div class="base_controls_content d-flex flex-column justify-space-around align-center">
+          <div class="base_controls_content d-flex flex-column justify-center align-center">
 
             <div class="base_controls_form">
               <div class="base_controls_label">
@@ -30,6 +30,9 @@
               >
             </div>
             
+            <div class="base_controls_error">
+              
+            </div>
           
             <button
               type="button"
@@ -55,7 +58,7 @@
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: 'Booking',
+  name: 'Home',
 
   data: () => ({
       
@@ -82,12 +85,6 @@ export default {
     background:#385F82;
     color:white;
     font-size: 25px;
-  }
-</style>
-
-<style>
-  .home{
-    height: 100%;
   }
 </style>
 
