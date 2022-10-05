@@ -15,7 +15,7 @@
                         Price: 
                     </div>
                     <div class="result_number">
-                        {{"$222"}}
+                        {{"$200"}}
                     </div>
                 </div>
                 <div>
@@ -44,7 +44,7 @@
                         Price: 
                     </div>
                     <div class="result_number">
-                        {{"$222"}}
+                        {{"$200"}}
                     </div>
                 </div>
                 <div>
@@ -72,7 +72,7 @@
                         Price: 
                     </div>
                     <div class="result_number">
-                        {{"$222"}}
+                        {{"$200"}}
                     </div>
                 </div>
                 <div>
@@ -130,6 +130,7 @@
         color: white;
         font-size: 24px;
         position: relative;
+        cursor: pointer;
     }
 
     .result_component{
@@ -144,6 +145,7 @@
         padding: 15px;
         color: black;
         font-size: 18px;
+        cursor: pointer;
     }
 
     .result_info{

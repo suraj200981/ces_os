@@ -38,7 +38,7 @@
                         Price: 
                     </div>
                     <div class="details_number">
-                        {{"$222"}}
+                        ${{price  * (1 + feeSelected/100) }}
                     </div>
                 </div>
                 <div>
@@ -51,10 +51,13 @@
                 </div>
                 <div class="details_controls">
                     <div class="base_controls_label">
-                        Type fee:
+                        Parcel type fee:
                     </div>
-                    <select class="base_controls_dropdown">
-                        <option v-for="fee in fees" :key="fee">{{fee}}</option>
+                    <select class="base_controls_dropdown" @change="feeSelected = $event.target.value">
+                        <option disabled selected value> Select type </option>
+                        <option v-for="fee in fees" :key="fee" :value="fee.value">
+                            {{fee.name}}: {{fee.value}}%
+                        </option>
                     </select>
                     <button
                         type="button"
@@ -79,7 +82,13 @@
             icons: {
                 mdiAccount
             },
-            fees: ['Weapons: 100%', 'Funny stuff: 10%'],
+            price: 200,
+            feeSelected: 0,
+            fees: [
+                {name: 'Weapons', value: 100},
+                {name: 'Animals', value: 40},
+                {name: 'Other', value: 0},
+            ],
             routes: [
                         {from: 'Tunis', to: 'Kabalo', by: 0}, 
                         {from: 'Kabalo', to: 'Kabalo', by: 1},
