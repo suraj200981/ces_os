@@ -34,25 +34,24 @@
             <h3 class="bookingTitle">Booking</h3>
             <v-card-text style="text-align:left !important;"><b>From:</b></v-card-text>
             <v-select
-          :items="items"
-          label="Outlined style"
+          :items="routes"
+          label="Starting location"
           dense
           outlined
         ></v-select>
         <v-card-text style="text-align:left !important;"><b>To:</b></v-card-text>
             <v-select
-          :items="items"
-          label="Outlined style"
+          :items="routes"
+          label="Final destination"
           dense
           outlined
         ></v-select>
-        <v-card-text style="text-align:left !important;"><b>Weight:</b></v-card-text>
+        <v-card-text style="text-align:left !important;"><b>Weight (kg):</b></v-card-text>
             <v-text-field
               label="Weight"
               solo
             ></v-text-field>
-            <v-card-text style="text-align:left !important;"><b>Size:</b></v-card-text>
-
+            <v-card-text style="text-align:left !important;"><b>Size category:</b></v-card-text>
             <v-row>
                 <v-text-field
                 class="widthTxt"
@@ -117,7 +116,7 @@
     data: () => ({
         column: null,
         row: null,
-     
+        routes: ['Congo', 'Dakar', 'Kabalo'],
     }),
   }
   </script>
