@@ -16,25 +16,27 @@
                 From:
               </div>
 
-              <select class="base_controls_dropdown">
-                <option v-for="route in routes" :key="route">{{route}}</option>
+              <select class="base_controls_dropdown"  @change="routeFromSelected = $event.target.value">
+                <option disabled selected value> Select type </option>
+                <option v-for="route in routes" :key="route" :disabled="routetoSelected != '' && routeToSelected == route">{{route}}</option>
               </select>
-
               <div class="base_controls_label">
               To:
             </div>
 
-            <select class="base_controls_dropdown">
-              <option v-for="route in routes" :key="route">{{route}}</option>
+            <select class="base_controls_dropdown"  @change="routeToSelected = $event.target.value">
+              <option disabled selected value> Select type </option>
+              <option v-for="route in routes" :key="route" :disabled="routeFromSelected != '' && routeFromSelected == route">{{route}}</option>
             </select>
 
             <div class="base_controls_label">
               Weight (kg):
             </div>
 
-            <input 
+            <input v-model="weight"
               class="base_controls_input"
               >
+              <div v-if="!invalidWeight" style="color:red">Not a valid weight</div>
 
             <div class="base_controls_label">
               Size (cm):
@@ -63,6 +65,7 @@
             <button
               type="button"
               class="base_controls_button"
+              @click="search()"
             >
               Search
             </button>
@@ -93,7 +96,25 @@
         resultSelected: null,
         row: null,
         routes: ["Congo", "Dakar", "Kabalo"],
+        routeFromSelected:'',
+        routeToSelected: '',
+        weight:0,
+        invalidWeight: true
     }),
+
+    methods:{
+          search(){
+           //regular expression which check if the weight is a number which is not 0 and not negative
+            var regex = /^[1-9]\d*$/;
+            if(regex.test(this.weight)){
+              this.invalidWeight = true;
+            }
+            else{
+              this.invalidWeight = false;
+            }
+            
+          }
+    },
     components: { ResultComponent, ResultDetailsComponent }
 }
   </script>

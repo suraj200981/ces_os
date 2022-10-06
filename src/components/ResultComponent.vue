@@ -97,7 +97,7 @@
             icons: {
                 mdiAccount
             },       
-        })
+        }),
     }
 </script>
 
