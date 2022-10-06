@@ -18,6 +18,7 @@
 
             <input 
               class="base_controls_input"
+              v-model="email"
               >
 
               <div class="base_controls_label">
@@ -27,13 +28,18 @@
             <input 
               class="base_controls_input"
               type="password"
+              v-model="password"
               >
+            </div>
+            <div class="base_controls_label" v-if="loginError" style="color:red;">
+              User with given credentials does not exist 
             </div>
             
           
             <button
               type="button"
               class="base_controls_button"
+              @click="login()"
             >
               Login
             </button>
@@ -58,8 +64,23 @@ export default {
   name: 'Booking',
 
   data: () => ({
+
+    email: '',
+    password: '',
+    loginError: false
       
   }),
+
+  methods:{
+    login(){
+        if (this.email=='' && this.password==''){
+          this.loginError = true;
+        }else{
+          this.loginError = false;
+        }
+    }
+
+  }
 }
 </script>
 <style scoped>
