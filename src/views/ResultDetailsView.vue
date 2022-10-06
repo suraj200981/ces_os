@@ -1,16 +1,16 @@
 <template>
-    <Booking/>
+    <ResultDetailsComponent/>
   </template>
   
   <script>
   // @ is an alias to /src
-  import Booking from '@/components/Booking.vue'
+  import ResultDetailsComponent from '@/components/ResultDetailsComponent.vue'
   
   export default {
     // eslint-disable-next-line vue/multi-word-component-names
-    name: 'BookingView',
+    name: 'ResultDetailsView',
     components: {
-        Booking
+        ResultDetailsComponent
     }
   }
   </script>

@@ -1,7 +1,6 @@
 <template>
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/result">Result</router-link> |
     <router-link to="/booking">Booking</router-link>
   </nav>
   <router-view/>
@@ -14,6 +13,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  height: 100%;
+}
+
+#app > div{
   height: 100%;
 }
 
@@ -43,7 +46,7 @@ html{
 
 .base_container{
   height: 100%;
-  width: 100%;
+  width: 80% !important;
   box-sizing: border-box;
   max-width: unset !important;
   padding: 0 5% !important;
@@ -105,4 +108,62 @@ html{
   font-size: 20px;
   width: 80%;
 }
+
+.base_controls_content{
+  height: 90%;
+  padding: 5%;
+}
+
+.base_controls_label{
+  width: 80%;
+  text-align: left;
+  font-size: 18px;
+}
+
+.base_controls_input{
+  background: white;
+  border: 3px solid #085394;
+  margin-bottom: 20px;
+  font-size: 18px;
+  width: 80%;
+  padding: 2px;
+}
+
+.base_controls_form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.base_controls_button{
+  background: #085394;
+  border: 3px solid black;
+  color: white !important;
+  font-size: 20px;
+  width: 80%;
+}
+
+.base_controls_error{
+  width: 100%;
+  text-align: center;
+  color: red;
+  font-size: 16px;
+  margin-bottom: 20px;
+  height: 20px;
+}
+
+.base_controls_dropdown{
+  width: 80%;
+  background: white;
+  border: 3px solid #085394;
+  margin-bottom: 20px;
+  padding: 2px;
+}
+
+.base_controls_dropdown .v-field__input{
+  padding: 0 !important;
+}
+
 </style>

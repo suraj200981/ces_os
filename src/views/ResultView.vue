@@ -1,5 +1,14 @@
 <template>
-  <div class="about">
-    <h3>Result</h3>
-  </div>
+  <ResultComponent/>
 </template>
+
+<script>
+import ResultComponent from '@/components/ResultComponent.vue';
+
+export default {
+  name: 'ResultView',
+  components: {
+    ResultComponent,
+}
+}
+</script>
